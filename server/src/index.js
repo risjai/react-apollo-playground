@@ -1,9 +1,12 @@
 const { GraphQLServer } = require('graphql-yoga')
 const { Prisma } = require('prisma-binding')
 const Query = require('./resolvers/Query')
+// import x from './resolvers/Query';
 const Mutation = require('./resolvers/Mutation')
 const Subscription = require('./resolvers/Subscription')
 const Feed = require('./resolvers/Feed')
+const YAML = require('yamljs')
+const dbConfigData = YAML.load('dbConfig.yml');
 
 const resolvers = {
   Query,
@@ -19,8 +22,8 @@ const server = new GraphQLServer({
     ...req,
     db: new Prisma({
       typeDefs: 'src/generated/prisma.graphql',
-      endpoint: '__PRISMA_ENDPOINT__',
-      secret: 'mysecret123',
+      endpoint: YAML.parse(dbConfigData.dbServerEndpoint),
+      secret: YAML.parse(dbConfigData.dbServerSecret),
       debug: true
     }),
   }),
