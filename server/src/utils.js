@@ -1,6 +1,7 @@
 const jwt = require('jsonwebtoken')
-const APP_SECRET = 'GraphQL-is-aw3some'
-
+const YAML = require('yamljs')
+const dbConfigData = YAML.load('dbConfig.yml');
+const APP_SECRET = YAML.parse(dbConfigData.APP_SECRET)
 function getUserId(context) {
   const Authorization = context.request.get('Authorization')
   if (Authorization) {
