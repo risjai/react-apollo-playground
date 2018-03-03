@@ -4452,6 +4452,13 @@ yaml-ast-parser@^0.0.40:
   version "0.0.40"
   resolved "https://registry.yarnpkg.com/yaml-ast-parser/-/yaml-ast-parser-0.0.40.tgz#08536d4e73d322b1c9ce207ab8dd70e04d20ae6e"
 
+yamljs@^0.3.0:
+  version "0.3.0"
+  resolved "https://registry.yarnpkg.com/yamljs/-/yamljs-0.3.0.tgz#dc060bf267447b39f7304e9b2bfbe8b5a7ddb03b"
+  dependencies:
+    argparse "^1.0.7"
+    glob "^7.0.5"
+
 yargs-parser@^7.0.0:
   version "7.0.0"
   resolved "https://registry.yarnpkg.com/yargs-parser/-/yargs-parser-7.0.0.tgz#8d0ac42f16ea55debd332caf4c4038b3e3f5dfd9"
